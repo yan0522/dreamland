@@ -223,9 +223,9 @@
                 </p>
                 <p>
                     <span>违法和不良信息举报电话：010-xxxxxxx</span>
-                    <span>邮箱：xxx@dreamland.wang</span>
+                    <span>邮箱：xxx@dreamland.yan</span>
                 </p>
-                <p style="margin-top: 8px">&copy;www.dreamland.wang 梦境网版权所有</p>
+                <p style="margin-top: 8px">&copy;www.dreamland.yan 梦境网版权所有</p>
             </div>
         </div>
 
@@ -250,13 +250,13 @@
         var email = arr[0];
         var opt = email.split("@")[1];
         if("qq.com"==opt){
-            location.href = "../..";
+            location.href = "https://mail.qq.com/";
         }else if("163.com"==opt){
-            location.href = "../..";
+            location.href = "https://mail.163.com/";
         }else if("162.com"==opt){
-            location.href = "../..";
+            location.href = "https://mail.162.com/";
         }else if("sina.com"==opt){
-            location.href = "../..";
+            location.href = "http://mail.sina.com.cn/";
         }else if("sohu"==opt){
             location.href = "https://mail.sohu.com";
         }
@@ -282,7 +282,7 @@
     }
 
     function reRegist() {
-        location.href = "../../register.jsp";
+        location.href = "${ctx}/register";
     }
    
 </script>

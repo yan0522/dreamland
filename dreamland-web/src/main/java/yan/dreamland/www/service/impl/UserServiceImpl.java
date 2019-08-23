@@ -33,7 +33,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByEmail(String email) {
-        return null;
+
+        return userMapper.findByEmail(email);
     }
 
     @Override
@@ -53,6 +54,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(User user) {
-
+    userMapper.update(user);
     }
 }

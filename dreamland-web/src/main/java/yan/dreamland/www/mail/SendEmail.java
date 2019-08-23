@@ -21,38 +21,28 @@ public class SendEmail {
            String to = email;   //发邮件的目的地（收件人信箱）
            // Get system properties
            Properties props = System.getProperties();
-
            // Setup mail server
            props.put("mail.smtp.host", host);
-
            // Get session
            props.put("mail.smtp.auth", "true"); //这样才能通过验证
-
-           MyAuthenticator myauth = new MyAuthenticator(from, "你的授权码");
+           MyAuthenticator myauth = new MyAuthenticator(from, "yan778966");//我的授权码
            Session session = Session.getDefaultInstance(props, myauth);
-
 //    session.setDebug(true);
 
            // Define message
            MimeMessage message = new MimeMessage(session);
 
-
            // Set the from address
            message.setFrom(new InternetAddress(from));
-
            // Set the to address
            message.addRecipient( Message.RecipientType.TO,
                    new InternetAddress(to));
-
            // Set the subject
            message.setSubject("梦境网激活邮件通知");
-
            // Set the content
-           message.setContent( "<a href=\"http://localhost:8080/activecode?email="+email+"&validateCode="+validateCode+"\" target=\"_blank\">请于24小时内点击激活</a>","text/html;charset=gb2312");
+           message.setContent( "<a href=\"http://localhost:8080/dreamland_web_war_exploded/activecode?email="+email+"&validateCode="+validateCode+"\" target=\"_blank\">请于24小时内点击激活</a>","text/html;charset=gb2312");
            message.saveChanges();
-
            Transport.send(message);
-
            log.info( "send validateCode to " + email );
        }catch (Exception e){
 

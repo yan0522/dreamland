@@ -14,6 +14,7 @@ public class MyAuthenticator extends javax.mail.Authenticator {
         this.strPwd = password;
     }
 
+    @Override
     protected PasswordAuthentication getPasswordAuthentication() {
         return new PasswordAuthentication(strUser, strPwd);
     }
